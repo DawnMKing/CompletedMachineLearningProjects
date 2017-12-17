@@ -9,10 +9,9 @@ Created on Thu Mar 30 00:12:09 2017
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn.cross_validation import ShuffleSplit, train_test_split
 from sklearn.metrics import r2_score as r2, make_scorer
 from sklearn.tree import DecisionTreeRegressor as DT
-from sklearn.grid_search import  GridSearchCV 
+from sklearn.model_selection import  GridSearchCV, ShuffleSplit, train_test_split 
 # Import supplementary visualizations code visuals.py
 import visuals as vs
 
@@ -85,7 +84,7 @@ def fit_model(features, prices):
     
     # Create cross-validation sets from the training data to define how to split 
     #and how many test runs of each split on data 
-    cv_sets = ShuffleSplit(features.shape[0], n_iter=10, test_size=0.2, random_state=1)
+    cv_sets = ShuffleSplit( n_splits=10, test_size=0.2, random_state=1)
 
     # TODO: Create a decision tree regressor object
     regressor = DT()
