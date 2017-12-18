@@ -45,7 +45,7 @@ def pca_results(good_data, pca):
 	# Display the explained variance ratios
 	for i, ev in enumerate(pca.explained_variance_ratio_):
 		ax.text(i-0.40, ax.get_ylim()[1] + 0.05, "Explained Variance\n          %.4f"%(ev))
-
+	fig.savefig('PCA.png')
 	# Return a concatenated DataFrame
 	return pd.concat([variance_ratios, components], axis = 1)
 
