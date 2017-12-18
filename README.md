@@ -3,6 +3,7 @@ Machine Learning Projects for the completion of Udacity's Machine Learning Nanod
 
 ## Predicting Boston Housing Prices
 Purpose is to predict boston housing prices based on 490 data points and 3 features. 
+
 **Features**
 1.  `RM`: average number of rooms per dwelling
 2. `LSTAT`: percentage of population considered lower status
