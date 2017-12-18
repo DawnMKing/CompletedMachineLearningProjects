@@ -50,6 +50,7 @@ Predicted selling price for Client 3's home: $938,053.85
 
 ## Finding Donors
 
+This project employs several supervised algorithms to accurately model individuals' income using data collected from the 1994 U.S. Census. After analysis of initial implementation of several different algorithms, one is chosen that is further optimized. This **goal** of this project is to construct a model that accurately predicts whether an individual makes more than $50,000, with theunderstanding that an individual's income can help a non-profit better understand how large of a donation to request, or whether or not they should reach out to begin with. The project will infer a person's individual income this value from other publically available features.
 
 ## Customer Segments
 
