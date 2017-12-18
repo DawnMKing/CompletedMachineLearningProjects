@@ -16,6 +16,7 @@ Purpose is to predict boston housing prices based on 490 data points and 3 featu
 ###Key Highlights
 
 Supervised Learning: Decision Tree Regressor
+
 Implemented GridSearchCV with maxdepth parameter, r2 scoring, and ShuffleSplit (number of splits=10) to determine optimal model.
 
 ####Visualizations
@@ -29,13 +30,19 @@ Implemented GridSearchCV with maxdepth parameter, r2 scoring, and ShuffleSplit (
 ####Outcome
 
 Optimal depth was determined to be at 4. Reasonable predictions were made on: 
+
 Client 1 (#rooms=5,%poverty level=17,student-teacher ratio=15)
+
 Predicted selling price for Client 1's home: $408,800.00
 
-Client 1 (#rooms=4,%poverty level=32,student-teacher ratio=22)
+
+Client 2 (#rooms=4,%poverty level=32,student-teacher ratio=22)
+
 Predicted selling price for Client 2's home: $231,253.45
 
-Client 1 (#rooms=8,%poverty level=3,student-teacher ratio=12)
+
+Client 3 (#rooms=8,%poverty level=3,student-teacher ratio=12)
+
 Predicted selling price for Client 3's home: $938,053.85
 
 
