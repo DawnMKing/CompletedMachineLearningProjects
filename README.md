@@ -91,6 +91,7 @@ GridseacrhCV with parameters = {'max_depth':[2,3,4,5,6,8], 'splitter':['best','r
 ![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/finding_donors/features.png)
 
 **Compared reduced model to full model**
+
 Final Model trained on full data
 
 ------
@@ -101,6 +102,7 @@ F-score on testing data: 0.7229
 
 
 Final Model trained on reduced data
+
 ------
 
 Accuracy on testing data: 0.8449
