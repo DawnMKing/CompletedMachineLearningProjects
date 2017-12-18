@@ -57,13 +57,22 @@ This project employs several supervised algorithms to accurately model individua
 Features: age, workclass, education_level, education-num, marital-status, occupation, relationship, race, sex, capital-gain, capital-loss, hours-per-week, native-country
 
 Census Records:
+
 Total number of records: 45222
+
 Individuals making more than $50,000: 11208
+
 Individuals making at most $50,000: 34014
+
 Percentage of individuals making more than $50,000: 24.78%
 
+**Features with Skewed Data Distribution**
 ![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/finding_donors/Skewed.png)
+
+**Lorgaritmic Transformation**
 ![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/finding_donors/Log.png)
+
+
 ![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/finding_donors/features.png)
 ![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/finding_donors/AllLearners.png)
 ## Customer Segments
