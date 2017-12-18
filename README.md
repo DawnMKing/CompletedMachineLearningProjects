@@ -5,7 +5,8 @@ Machine Learning Projects for the completion of Udacity's Machine Learning Nanod
 Supervised Learning
 
 ![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/boston_housing/ScatterPlots.PNG)
-
+![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/boston_housing/LearningCurves.png)
+![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/boston_housing/Complexity.png)
 ## Finding Donors
 
 
