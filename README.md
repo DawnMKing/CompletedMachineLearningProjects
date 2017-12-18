@@ -13,15 +13,13 @@ Purpose is to predict boston housing prices based on 490 data points and 3 featu
 
 ![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/boston_housing/ScatterPlots.PNG)
 
-###Key Highlights
+### Key Highlights
 
 Supervised Learning: Decision Tree Regressor
 
 Implemented GridSearchCV with maxdepth parameter, r2 scoring, and ShuffleSplit (number of splits=10) to determine optimal model.
 
 #### Visualizations
-
-**Learned Performance:**
 
 *Learning Curves* show high bias when tree depth is too low, and high variance when tree depth is to high.
 ![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/boston_housing/LearningCurves.png)
