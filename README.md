@@ -11,6 +11,8 @@ Purpose is to predict boston housing prices based on 490 data points and 3 featu
 **Target Variable**
 4. `MEDV`: median value of owner-occupied homes
 
+![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/boston_housing/ScatterPlots.PNG)
+
 ###Key Highlights
 
 Supervised Learning: Decision Tree Regressor
