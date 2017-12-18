@@ -72,9 +72,15 @@ Percentage of individuals making more than $50,000: 24.78%
 **Lorgaritmic Transformation**
 ![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/finding_donors/Log.png)
 
+All numerical data was normalized using MinMaxScaler, and categorical features where transformed using one-hot encoding via pandas get_dummies function.
+
+### Exporing Supervised Models
+
+**Guassian Naive Bayes**(red), **Support Vector Classifier**(blue), **Decision Tree Classifier**(green)
+
+![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/finding_donors/AllLearners.png)
 
 ![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/finding_donors/features.png)
-![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/finding_donors/AllLearners.png)
 ## Customer Segments
 
 
