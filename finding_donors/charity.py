@@ -10,6 +10,8 @@ import pandas as pd
 from time import time
 from IPython.display import display # Allows the use of display() for DataFrames
 from sklearn.metrics import accuracy_score, fbeta_score
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import train_test_split
 # Import supplementary visualization code visuals.py
 import visuals as vs
 
@@ -51,8 +53,7 @@ features_raw[skewed] = data[skewed].apply(lambda x: np.log(x + 1))
 # Visualize the new log distributions
 vs.distribution(features_raw, transformed = True)
 
-# Import sklearn.preprocessing.StandardScaler
-from sklearn.preprocessing import MinMaxScaler
+
 
 # Initialize a scaler, then apply it to the features
 scaler = MinMaxScaler()
@@ -74,21 +75,24 @@ encoded = list(features.columns)
 # Uncomment the following line to see the encoded feature names
 #print encoded
 
-# Import train_test_split
-from sklearn.cross_validation import train_test_split
 
 # Split the 'features' and 'income' data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(features, income, test_size = 0.2, random_state = 0)
 #print(X_train)
 # Show the results of the split
-print "Training set has {} samples.".format(X_train.shape[0])
-print "Testing set has {} samples.".format(X_test.shape[0])
+#print "Training set has {} samples.".format(X_train.shape[0])
+#print "Testing set has {} samples.".format(X_test.shape[0])
 
-# TODO: Calculate accuracy
-accuracy = accuracy_score(X_train, y_train, normalize = True)
-print(accurary)
-# TODO: Calculate F-score using the formula above for beta = 0.5
-#fscore = fbeta_score()
+#Calculate accuracy
+accuracy = float(n_greater_50k)/n_records
+#Calculating precision
+precision = float(n_greater_50k)/ (n_greater_50k + n_at_most_50k)
 
-# Print the results 
-#print "Naive Predictor: [Accuracy score: {:.4f}, F-score: {:.4f}]".format(accuracy, fscore)
+#Calculating recall
+recall = float(n_greater_50k)/(n_greater_50k + 0)
+
+#Calculate F-score using the formula above for beta = 0.5
+beta = 0.5
+fscore = (1+beta**2)*(precision*recall)/((precision*beta**2)+recall)
+
+print "Naive Predictor: [Accuracy score: {:.4f}, F-score: {:.4f}]".format(accuracy, fscore)
