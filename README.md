@@ -74,13 +74,40 @@ Percentage of individuals making more than $50,000: 24.78%
 
 All numerical data was normalized using MinMaxScaler, and categorical features where transformed using one-hot encoding via pandas get_dummies function.
 
-### Exporing Supervised Models
+### Exploring Supervised Models
 
 **Guassian Naive Bayes**(red), **Support Vector Classifier**(blue), **Decision Tree Classifier**(green)
 
 ![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/finding_donors/AllLearners.png)
 
+
+**Decision Tree Chosen for optimization pipeline.**
+
+GridseacrhCV with parameters = {'max_depth':[2,3,4,5,6,8], 'splitter':['best','random'] ,'min_samples_split':[0.001,0.002,0.003,0.005,0.006,.01,.02],'min_samples_leaf':[0.001,0.002,0.003,0.005,0.006,.01,.02] } and f_beta scoring.
+
+
+**Determined Feature Importance**
+
 ![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/finding_donors/features.png)
+
+**Compared reduced model to full model**
+Final Model trained on full data
+
+------
+
+Accuracy on testing data: 0.8525
+
+F-score on testing data: 0.7229
+
+
+Final Model trained on reduced data
+------
+
+Accuracy on testing data: 0.8449
+
+F-score on testing data: 0.6851
+
+
 ## Customer Segments
 
 
