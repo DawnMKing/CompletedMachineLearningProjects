@@ -19,15 +19,17 @@ Supervised Learning: Decision Tree Regressor
 
 Implemented GridSearchCV with maxdepth parameter, r2 scoring, and ShuffleSplit (number of splits=10) to determine optimal model.
 
-####Visualizations
+#### Visualizations
+
 **Learned Performance:**
+
 *Learning Curves* show high bias when tree depth is too low, and high variance when tree depth is to high.
 ![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/boston_housing/LearningCurves.png)
 
 *Complexity Plot* shows how the training and validation set score as a function of tree depth.
 ![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/boston_housing/Complexity.png)
 
-####Outcome
+#### Outcome
 
 Optimal depth was determined to be at 4. Reasonable predictions were made on: 
 
