@@ -92,6 +92,8 @@ GridseacrhCV with parameters = {'max_depth':[2,3,4,5,6,8], 'splitter':['best','r
 
 **Compared reduced model to full model**
 
+------
+
 Final Model trained on full data
 
 ------
@@ -100,6 +102,8 @@ Accuracy on testing data: 0.8525
 
 F-score on testing data: 0.7229
 
+
+------
 
 Final Model trained on reduced data
 
@@ -111,6 +115,28 @@ F-score on testing data: 0.6851
 
 
 ## Customer Segments
+
+This project analyzes a dataset containing data on various customers' annual spending of diverse food product categories. The goal of this project is to inform the distributor of the customer segments to give insight into how to efficiently structure the delivery system of the food products.
+
+
+![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/customer_segments/Skewed_Scatter.png)
+
+![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/customer_segments/Log_scatter.png)
+
+
+![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/customer_segments/heatmap.png)
+
+
+![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/customer_segments/PCA.png)
+
+![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/customer_segments/PCA_two_features.png)
+
+![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/customer_segments/Clusters_PCA.png)
+
+![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/customer_segments/projections_biplot.png)
+
+
+![alt text](https://github.com/DawnMKing/CompletedMachineLearningProjects/blob/master/customer_segments/bar_segments.png)
 
 
 ## Smartcab
