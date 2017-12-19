@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Sep 19 11:35:13 2017
-
+Modified on Monday Dec 18 2017
 @author: dking
 """
 
@@ -10,7 +10,7 @@ Created on Tue Sep 19 11:35:13 2017
 import numpy as np
 import pandas as pd
 from IPython.display import display # Allows the use of display() for DataFrames
-
+import matplotlib.pyplot as plt
 # Import supplementary visualizations code visuals.py
 import visuals as vs
 
@@ -28,7 +28,8 @@ except:
     
 # Display a description of the dataset(gives statiscal prpoeties of data set)
 display(data.describe())
-
+import seaborn as sns
+sns.heatmap(data.corr(),annot=True)
 # TODO: Select three indices of your choice you wish to sample from the dataset
 indices = [50,200,350]
 
@@ -68,14 +69,8 @@ log_samples = np.log(samples)
 # Produce a scatter matrix for each pair of newly-transformed features
 pd.plotting.scatter_matrix(log_data, alpha = 0.3, figsize = (14,8), diagonal = 'kde');
 
-
 # Display the log-transformed sample data
-"""
-x=data.describe()
-sam=np.log(x)
-display(sam)
-display(log_samples)
-"""
+
 df1=pd.DataFrame()
 # For each feature find the data points with extreme high or low values
 for feature in log_data.keys():
@@ -126,7 +121,74 @@ pca_samples = pca.transform(log_samples)
 # Generate PCA results plot
 pca_results = vs.pca_results(good_data2, pca)
 
+#Apply PCA by fitting the good data with only two dimensions
+pca = PCA(n_components=2)
+pca.fit(good_data2)
+
+# Transform the good data using the PCA fit above
+reduced_data = pca.transform(good_data2)
+
+# Transform the sample log-data using the PCA fit above
+pca_samples = pca.transform(log_samples)
+
+# Create a DataFrame for the reduced data
+reduced_data = pd.DataFrame(reduced_data, columns = ['Dimension 1', 'Dimension 2'])
+vs.pca_results(good_data2, pca)
+
+# Create a biplot
+vs.biplot(good_data2, reduced_data, pca)
+
+from sklearn.mixture import GaussianMixture as GMM
+from sklearn.metrics import silhouette_score
+
+# TODO: Apply your clustering algorithm of choice to the reduced data
+#components=[2,4,6,8,10,12,14,20]
+components=[2]
+All_Scores=[]
+for i in range(len(components)):
+    clusterer = GMM(n_components=components[i]).fit(reduced_data)
+
+    # Predict the cluster for each data point
+    preds = clusterer.predict(reduced_data)
+
+    # Find the cluster centers
+    centers = clusterer.means_
+
+    # Predict the cluster for each transformed sample data point
+    sample_preds = clusterer.predict(pca_samples)
+
+    #  Calculate the mean silhouette coefficient for the number of clusters chosen
+    score = silhouette_score(reduced_data,preds)
+    All_Scores.append('n = '+str(components[i]) +": "+str(score))
+print(All_Scores)
+# Display the results of the clustering from implementation
+vs.cluster_results(reduced_data, preds, centers, pca_samples)
 
 
+# TODO: Inverse transform the centers
+log_centers = pca.inverse_transform(centers)
 
+# TODO: Exponentiate the centers
+true_centers = np.exp(log_centers)
 
+# Display the true centers
+segments = ['Segment {}'.format(i) for i in range(0,len(centers))]
+true_centers = pd.DataFrame(np.round(true_centers), columns = data.keys())
+true_centers.index = segments
+display(true_centers)
+
+compare = true_centers.copy()
+compare.loc[true_centers.shape[0]] = data.median()
+
+plt.style.use('ggplot')
+compare.plot(kind='bar')
+labels = true_centers.index.values.tolist()
+labels.append("Data Median")
+plt.xticks(range(compare.shape[0]),labels)
+plt.show()
+
+# Display the predictions
+for i, pred in enumerate(sample_preds):
+    print("Sample point", i, "predicted to be in Cluster", pred)
+# Display the clustering results based on 'Channel' data
+vs.channel_results(reduced_data, outliers2, pca_samples)
